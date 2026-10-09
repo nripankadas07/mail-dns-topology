@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "mail-dns-topology"
+version = "0.1.0"
+description = "Offline mail-DNS snapshot topology: SPF edges, cycles, TXT fragments, DKIM selectors and MX addresses."
+requires-python = ">=3.10"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Nripanka Das"}]
+dependencies = []
+[project.scripts]
+mail-dns-topology = "mail_dns_topology:main"
+[project.urls]
+Repository = "https://github.com/nripankadas07/mail-dns-topology"
+Issues = "https://github.com/nripankadas07/mail-dns-topology/issues"
+[tool.setuptools]
+py-modules = ["mail_dns_topology"]

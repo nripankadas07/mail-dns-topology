@@ -1,0 +1,48 @@
+{
+  "domain": "example.test",
+  "selectors": [
+    "demo"
+  ],
+  "records": [
+    {
+      "name": "example.test",
+      "type": "TXT",
+      "chunks": [
+        "v=spf1 include:_spf.example.test -all"
+      ]
+    },
+    {
+      "name": "_spf.example.test",
+      "type": "TXT",
+      "chunks": [
+        "v=sp",
+        "f1 -all"
+      ]
+    },
+    {
+      "name": "_dmarc.example.test",
+      "type": "TXT",
+      "chunks": [
+        "v=DMARC1; p=reject"
+      ]
+    },
+    {
+      "name": "demo._domainkey.example.test",
+      "type": "TXT",
+      "chunks": [
+        "v=DKIM1; p=SYNTHETIC_NOT_A_REAL_KEY"
+      ]
+    },
+    {
+      "name": "example.test",
+      "type": "MX",
+      "priority": 10,
+      "target": "mail.example.test"
+    },
+    {
+      "name": "mail.example.test",
+      "type": "A",
+      "address": "192.0.2.10"
+    }
+  ]
+}

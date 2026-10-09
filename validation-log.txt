@@ -1,0 +1,72 @@
+test_boolean_priority (test_contract.Tests.test_boolean_priority) ... ok
+test_case_trailing_dot (test_contract.Tests.test_case_trailing_dot) ... ok
+test_cycle (test_contract.Tests.test_cycle) ... ok
+test_dkim_revoked (test_contract.Tests.test_dkim_revoked) ... ok
+test_dmarc_policy (test_contract.Tests.test_dmarc_policy) ... ok
+test_duplicate_tag (test_contract.Tests.test_duplicate_tag) ... ok
+test_empty_txt (test_contract.Tests.test_empty_txt) ... ok
+test_family (test_contract.Tests.test_family) ... ok
+test_fragment_inside_version (test_contract.Tests.test_fragment_inside_version) ... ok
+test_missing_dependency (test_contract.Tests.test_missing_dependency) ... ok
+test_mx_missing_address (test_contract.Tests.test_mx_missing_address) ... ok
+test_separate_records_not_joined (test_contract.Tests.test_separate_records_not_joined) ... ok
+test_unsupported_not_green (test_contract.Tests.test_unsupported_not_green) ... ok
+test_valid (test_contract.Tests.test_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.002s
+
+OK
+{
+  "good": {
+    "domain": "example.test",
+    "spf_nodes": 2,
+    "edges": [
+      {
+        "source": "example.test",
+        "target": "_spf.example.test",
+        "kind": "include"
+      }
+    ],
+    "findings": []
+  },
+  "violation": {
+    "domain": "example.test",
+    "spf_nodes": 2,
+    "edges": [
+      {
+        "source": "example.test",
+        "target": "_spf.example.test",
+        "kind": "include"
+      },
+      {
+        "source": "_spf.example.test",
+        "target": "example.test",
+        "kind": "redirect"
+      }
+    ],
+    "findings": [
+      {
+        "code": "spf_cycle",
+        "owner": "_spf.example.test",
+        "target": "example.test"
+      }
+    ]
+  }
+}
+Processing /workspace/scratch/5d784ffbbfd3/launch-oct9/mail-dns-topology
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: mail-dns-topology
+  Building wheel for mail-dns-topology (pyproject.toml): started
+  Building wheel for mail-dns-topology (pyproject.toml): finished with status 'done'
+  Created wheel for mail-dns-topology: filename=mail_dns_topology-0.1.0-py3-none-any.whl size=6304 sha256=7d2fd292623c965d713119aeb5437649751ab90d6f15140c1cdc09c18cda18ed
+  Stored in directory: /root/.cache/pip/wheels/5e/22/98/e788e13cb113f51c4d9b5e59a747fbc182a2750445f550943d
+Successfully built mail-dns-topology
+Installing collected packages: mail-dns-topology
+Successfully installed mail-dns-topology-0.1.0
+PASS: fresh package installation and installed CLI good/findings/invalid cases outside source

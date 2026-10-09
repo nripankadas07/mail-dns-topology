@@ -1,0 +1,20 @@
+[
+  {
+    "args": [
+      "snapshot.json"
+    ],
+    "exit": 0
+  },
+  {
+    "args": [
+      "bad-snapshot.json"
+    ],
+    "exit": 1
+  },
+  {
+    "args": [
+      "invalid.json"
+    ],
+    "exit": 2
+  }
+]
